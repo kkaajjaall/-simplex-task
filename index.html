@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/css/ol.css" type="text/css">
+    <style>
+      .map {
+        height: 400px;
+        width: 100%;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/build/ol.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Map</title>
+  </head>
+  <body>
+    <div class="container-fluid main">
+      <div class="row d-flex main_row">
+        <div class="col-3 sidebar p-2">
+          <!-- search -->
+            <div class="row search">
+              <div class="col-10">
+                <input type="text" placeholder="Search" class="search_input" width="100%"/>
+              </div>
+              <div class="col-2">
+                <i class="fa-solid fa-magnifying-glass search_icon"></i>
+              </div>
+            </div>
+            <!-- search end -->
+            <div class="menu my-3">
+           <div class="d-flex text-center">
+                <input type="checkbox" id="verticals" name="verticals" value="verticals"  class="mt-2 me-3 ">
+                <p>Verticals</p>
+            </div>
+            <div class="d-flex text-center">
+                <input type="checkbox" id="Emergency" name="Emergency" value="Emergency" class="mt-2 me-3 ">
+                <p>Emergency</p>
+            </div> 
+            <div class="d-flex text-center">
+                <input type="checkbox" id="Emergency" name="Emergency" value="Emergency" class="mt-2 me-3 ">
+                <p>Local</p>
+            </div> 
+            <div class="d-flex text-center">
+                <input type="checkbox" id="Emergency" name="Emergency" value="Emergency" class="mt-2 me-3 ">
+                <p>Facilities</p>
+            </div> 
+            <div class="d-flex text-center">
+                <input type="checkbox" id="Emergency" name="Emergency" value="Emergency" class="mt-2 me-3 ">
+                <p>Travle</p>
+            </div> 
+            <div class="d-flex text-center">
+                <input type="checkbox" id="Emergency" name="Emergency" value="Emergency" class="mt-2 me-3 ">
+                <p>Education</p>
+            </div> 
+            <div class="d-flex text-center">
+                <input type="checkbox" id="Emergency" name="Emergency" value="Emergency" class="mt-2 me-3 ">
+                <p>Point Of Intrest</p>
+            </div> 
+            <div class="d-flex text-center">
+                <input type="checkbox" id="Emergency" name="Emergency" value="Emergency" class="mt-2 me-3 ">
+                <p>Other</p>
+            </div> 
+            <div class="d-flex text-center">
+                <input type="checkbox" id="Emergency" name="Emergency" value="Emergency" class="mt-2 me-3 ">
+                <p>Boundries</p>
+            </div> 
+        </div>
+        </div>
+        <div class="col-9 map">
+            <div id="map" class="map"></div>
+            <script type="text/javascript">
+                var map = new ol.Map({
+                  target: 'map',
+                  layers: [
+                    new ol.layer.Tile({
+                      source: new ol.source.OSM()
+                    })
+                  ],
+                  view: new ol.View({
+                    center: ol.proj.fromLonLat([37.41, 8.82]),
+                    zoom: 4
+                  })
+                });
+              </script>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
